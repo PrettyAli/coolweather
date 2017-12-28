@@ -10,10 +10,20 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+    signingConfigs {
+        config {
+            storeFile file('ccy.jks')
+            storePassword '1234567'
+            keyAlias 'android'
+            keyPassword '1234567'
+        }
+    }
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android.txt'),
+                    'proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
     }
 }

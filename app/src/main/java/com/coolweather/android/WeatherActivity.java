@@ -66,6 +66,8 @@ public class WeatherActivity extends Activity {
 
     private TextView sportText;
 
+    private TextView uvText;
+
     private ImageView bingPicImg;
 
     public SwipeRefreshLayout swipeRefreshLayout;
@@ -97,6 +99,7 @@ public class WeatherActivity extends Activity {
         comfortText = findViewById(R.id.comfort_text);
         carWashText = findViewById(R.id.car_wash_text);
         sportText = findViewById(R.id.sport_text);
+        uvText = findViewById(R.id.uv_text);
         bingPicImg = findViewById(R.id.bing_pic_img);
         swipeRefreshLayout = findViewById(R.id.swipe_refresh);
         drawerLayout = findViewById(R.id.drawer_layout);
@@ -230,8 +233,10 @@ public class WeatherActivity extends Activity {
         String comfort = "舒适度：" + weather.suggestion.comfort.info;
         String carWash = "洗车指数：" + weather.suggestion.carWash.info;
         String sport = "运动建议：" + weather.suggestion.sport.info;
+        String uv = "紫外线：" + weather.suggestion.uv.info;
         comfortText.setText(comfort);
         carWashText.setText(carWash);
+        uvText.setText(uv);
         sportText.setText(sport);
         weatherLayout.setVisibility(View.VISIBLE);
         Intent intent = new Intent(this, AutoUpdateService.class);
