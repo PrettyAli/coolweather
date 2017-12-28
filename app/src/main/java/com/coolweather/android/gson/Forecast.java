@@ -28,4 +28,13 @@ public class Forecast {
         public String info;
     }
 
+    @SerializedName("wind")
+    public WIND wind;
+
+    public class WIND {
+
+        public String dir;
+        public String sc;
+    }
+
 }
