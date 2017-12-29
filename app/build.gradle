@@ -12,10 +12,10 @@ android {
     }
     signingConfigs {
         config {
-            storeFile file('ccy.jks')
-            storePassword '1234567'
-            keyAlias 'android'
-            keyPassword '1234567'
+            storeFile file(KEY_PATH)
+            storePassword KEY_PASS
+            keyAlias ALIAS_NAME
+            keyPassword ALIAS_PASS
         }
     }
     buildTypes {
