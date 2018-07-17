@@ -221,8 +221,6 @@ public class WeatherActivity extends Activity {
             infoText.setText(forecast.more.info);
             maxText.setText(forecast.temperature.max + "℃");
             minText.setText(forecast.temperature.min + "℃");
-            windText.setText(forecast.wind.dir);
-            scText.setText(forecast.wind.sc);
             forecastLayout.addView(view);
         }
         if (weather.aqi != null) {
@@ -233,10 +231,8 @@ public class WeatherActivity extends Activity {
         String comfort = "舒适度：" + weather.suggestion.comfort.info;
         String carWash = "洗车指数：" + weather.suggestion.carWash.info;
         String sport = "运动建议：" + weather.suggestion.sport.info;
-        String uv = "紫外线：" + weather.suggestion.uv.info;
         comfortText.setText(comfort);
         carWashText.setText(carWash);
-        uvText.setText(uv);
         sportText.setText(sport);
         weatherLayout.setVisibility(View.VISIBLE);
         Intent intent = new Intent(this, AutoUpdateService.class);
